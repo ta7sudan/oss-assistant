@@ -1,2 +1,2 @@
-# oss-assistant
-适配各个oss
+# ts-multicmd-template
+Typescript multicmd template for dulu
