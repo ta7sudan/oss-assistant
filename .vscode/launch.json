@@ -10,7 +10,8 @@
 			"name": "Debug Entry",
 			"program": "${workspaceFolder}/dist/bin/index.js",
 			"args": [
-				"TODO"
+				"ls",
+				"/"
 			]
 		},
 		{

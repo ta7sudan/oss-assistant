@@ -24,7 +24,7 @@ process.addListener('uncaughtException', handleError);
 	yargonaut
 		.helpStyle('blue.underline')
 		.style('red.bold', 'required')
-		.style('magenta', ['boolean', 'string']);
+		.style('magenta', ['boolean', 'string', 'array', 'number']);
 
 	yargs
 		.scriptName(cmdName)
@@ -33,7 +33,7 @@ process.addListener('uncaughtException', handleError);
 		.completion('completion', 'get completion script')
 		.alias('h', 'help')
 		.alias('v', 'version')
-		.example(`${cmdName} todo`, 'TODO')
+		.example(`${cmdName} upload -c .oasrc.js -P ali -t js ./`, 'upload js files in ./')
 		.usage(`${chalk.yellowBright(logo)}\n\n${chalk.blue.underline('Usage:')}\n  `
 		+ `${cmdName} <command> [options]`)
 		.version(version)

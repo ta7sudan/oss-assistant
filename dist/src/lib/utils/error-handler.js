@@ -31,7 +31,7 @@ async function handleError(e) {
     else {
         index_1.logger.error(e.message);
     }
-    console.error(chalk_1.default.red(e.stack));
+    // console.error(chalk.red(e.stack as string));
     const spiner = ora_1.default('do clean up...\n').start();
     try {
         await index_1.cleaner.cleanup();

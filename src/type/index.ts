@@ -1,0 +1,1 @@
+export type OssUploadAdaptor = (files: Array<string>, ossOptions: any) => Promise<void>;

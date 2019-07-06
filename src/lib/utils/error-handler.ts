@@ -35,7 +35,7 @@ async function handleError(e: Error | CustomError): Promise<any> {
 		logger.error(e.message);
 	}
 
-	console.error(chalk.red(e.stack as string));
+	// console.error(chalk.red(e.stack as string));
 	
 	const spiner = ora('do clean up...\n').start();
 	try {
