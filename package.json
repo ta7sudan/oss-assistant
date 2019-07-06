@@ -1,6 +1,6 @@
 {
   "name": "oss-assistant",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "oss assistant",
   "main": "src/index.js",
   "types": "types/index.d.ts",
