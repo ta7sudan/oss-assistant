@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import * as semver from 'semver';
 import { logger, getCmds } from '../src/lib/utils';
-import { engines } from '../package.json';
+const { engines: { node: nodeVersion } } = require('../../package.json');
 
-const { node: nodeVersion } = engines;
 
 function checkNodeVersion(wanted: string, cliName: string): void {
 	const curNodeVersion = process.version;

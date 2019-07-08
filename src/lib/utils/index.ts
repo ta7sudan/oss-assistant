@@ -1,12 +1,12 @@
 import figlet from 'figlet';
 import { resolve, extname } from 'path';
-import pkg from '../../../package.json';
 import { OSSProvider } from '../adaptors/oss-client';
 import cleaner from './cleaner';
 import { homedir } from 'os';
 import * as logger from './logger';
 import { pathExistsSync, readFile } from 'fs-extra';
 import { safeLoad } from 'js-yaml';
+const pkg = require('../../../../package.json');
 
 type PromiseData = [undefined, any];
 

@@ -5,10 +5,10 @@ require("./lib/utils/safe-promise");
 const yargs_1 = tslib_1.__importDefault(require("yargs"));
 const yargonaut_1 = tslib_1.__importDefault(require("yargonaut"));
 const chalk_1 = tslib_1.__importDefault(require("chalk"));
-const package_json_1 = require("../package.json");
 const error_handler_1 = require("./lib/utils/error-handler");
 const utils_1 = require("./lib/utils");
-const authorName = typeof package_json_1.author === 'string' ? package_json_1.author : package_json_1.author.name;
+const { version, author } = require('../../package.json');
+const authorName = typeof author === 'string' ? author : author.name;
 process.addListener('SIGHUP', error_handler_1.handleSignal);
 process.addListener('SIGQUIT', error_handler_1.handleSignal);
 process.addListener('SIGINT', error_handler_1.handleSignal);
@@ -31,7 +31,7 @@ process.addListener('uncaughtException', error_handler_1.handleError);
         .example(`${cmdName} upload -c .oasrc.js -P ali -t js ./`, 'upload js files in ./')
         .usage(`${chalk_1.default.yellowBright(logo)}\n\n${chalk_1.default.blue.underline('Usage:')}\n  `
         + `${cmdName} <command> [options]`)
-        .version(package_json_1.version)
+        .version(version)
         .epilog(`By ${authorName}`)
         .help()
         // 尽量不要用async函数, 不过这里用用也没事

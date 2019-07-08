@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const figlet_1 = tslib_1.__importDefault(require("figlet"));
 const path_1 = require("path");
-const package_json_1 = tslib_1.__importDefault(require("../../../package.json"));
 const cleaner_1 = tslib_1.__importDefault(require("./cleaner"));
 exports.cleaner = cleaner_1.default;
 const os_1 = require("os");
@@ -11,6 +10,7 @@ const logger = tslib_1.__importStar(require("./logger"));
 exports.logger = logger;
 const fs_extra_1 = require("fs-extra");
 const js_yaml_1 = require("js-yaml");
+const pkg = require('../../../../package.json');
 exports.GLOBAL_CONFIG_FILES = ['.oasrc.js', '.oasrc.json', '.oasrc.yml', '.oasrc.yaml'].map((name) => path_1.resolve(os_1.homedir(), name));
 exports.isAsyncFunction = (fn) => fn[Symbol.toStringTag] === 'AsyncFunction';
 exports.to = (p) => p
@@ -18,7 +18,7 @@ exports.to = (p) => p
     .catch((err) => [err, undefined]);
 exports.sleep = (time) => new Promise((rs) => setTimeout(rs, time));
 exports.getAbsolutePath = (rel) => path_1.resolve(process.cwd(), rel);
-exports.getCmds = () => Object.keys(package_json_1.default.bin);
+exports.getCmds = () => Object.keys(pkg.bin);
 exports.getFiglet = (cmd) => new Promise((rs, rj) => {
     figlet_1.default(cmd, {
         horizontalLayout: 'fitted'
