@@ -58,7 +58,8 @@ const ls: CommandModule<ListArgv & ListAlias, ListArgv & ListAlias> = {
 			// });
 	},
 	async handler(argv: Arguments<ListAlias & ListArgv>): Promise<void> {
-		const { config, remotePath, longFormat, provider, recursive } = argv;
+		const { config, longFormat, provider, recursive } = argv;
+		const remotePath = argv.remotePath + '';
 		const options = await getOSSConfiguration(config, argv);
 
 		const commandOptions: ListCommandOptions = {

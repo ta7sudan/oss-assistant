@@ -203,7 +203,7 @@ class AliOSSClient extends oss_client_1.OSSClient {
         else if (!data) {
             throw new Error(`Unknown error.`);
         }
-        if (!data.objects && /\/$/.test(prefix)) {
+        if (!data.objects && !data.prefixes && /\/$/.test(prefix)) {
             try {
                 data = await this.client.list({
                     prefix: prefix.replace(/\/$/, ''),

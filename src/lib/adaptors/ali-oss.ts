@@ -269,7 +269,7 @@ export default class AliOSSClient extends OSSClient {
 			throw new Error(`Unknown error.`);
 		}
 
-		if (!data.objects && /\/$/.test(prefix)) {
+		if (!data.objects && !data.prefixes && /\/$/.test(prefix)) {
 			try {
 				data = await this.client.list(
 					{

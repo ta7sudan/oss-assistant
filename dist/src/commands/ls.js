@@ -38,7 +38,8 @@ const ls = {
         // });
     },
     async handler(argv) {
-        const { config, remotePath, longFormat, provider, recursive } = argv;
+        const { config, longFormat, provider, recursive } = argv;
+        const remotePath = argv.remotePath + '';
         const options = await utils_1.getOSSConfiguration(config, argv);
         const commandOptions = {
             longFormat: longFormat || options.longFormat,
