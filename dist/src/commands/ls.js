@@ -9,7 +9,7 @@ const ls = {
         return yargs
             .option('c', {
             alias: 'config',
-            describe: 'specify configuration file, default is .pockrc.js, .pockrc.json, .pockrc.yml, .pockrc.yaml',
+            describe: 'specify configuration file, default is .oasrc.js, .oasrc.json, .oasrc.yml, .oasrc.yaml',
             string: true
         })
             .option('l', {
