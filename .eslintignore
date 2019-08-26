@@ -2,3 +2,4 @@
 .prettierrc.js
 example/**/*.js
 dist/**/*.js
+src/**/*.ts
