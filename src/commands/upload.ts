@@ -64,7 +64,7 @@ const upload: CommandModule<UploadArgv & UploadAlias, UploadArgv & UploadAlias> 
 				number: true,
 				default: 0
 			})
-			.option('t', {
+			.option<string, any>('t', {
 				alias: 'types',
 				describe: 'matched file types, can be "img", "js", "css", "font", default is "" means any types',
 				array: true
@@ -117,7 +117,7 @@ const upload: CommandModule<UploadArgv & UploadAlias, UploadArgv & UploadAlias> 
 
 		const commandOptions: UploadCommandOptions = {
 			dir: dir || options.dir,
-			retry: retry || options.retry,
+			retry: retry && retry > 0 ? retry : options.retry,
 			limit: limit || options.limit,
 			timeout: timeout || options.timeout,
 			remotePath: remotePath || options.remotePath,

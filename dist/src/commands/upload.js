@@ -81,7 +81,7 @@ const upload = {
         const options = await utils_1.getOSSConfiguration(config, argv);
         const commandOptions = {
             dir: dir || options.dir,
-            retry: retry || options.retry,
+            retry: retry && retry > 0 ? retry : options.retry,
             limit: limit || options.limit,
             timeout: timeout || options.timeout,
             remotePath: remotePath || options.remotePath,
